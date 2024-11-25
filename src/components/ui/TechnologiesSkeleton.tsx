@@ -1,0 +1,49 @@
+import React from "react";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiJavascript,
+  SiPython,
+  SiPostgresql,
+  SiCplusplus,
+  SiUnity,
+  SiCsharp,
+  SiGo,
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa";
+
+const techs = [
+  { icon: SiReact, name: "React" },
+  { icon: SiNextdotjs, name: "Next.js" },
+  { icon: SiTypescript, name: "TypeScript" },
+  { icon: SiJavascript, name: "JavaScript" },
+  { icon: SiPython, name: "Python" },
+  { icon: SiPostgresql, name: "PostgreSQL" },
+  { icon: SiCplusplus, name: "C++" },
+  { icon: SiCsharp, name: "C#" },
+  { icon: SiUnity, name: "Unity" },
+  { icon: SiGo, name: "Go" },
+  { icon: FaJava, name: "Java" },
+];
+const TechnologiesSkeleton = () => {
+  return (
+    <div className="flex w-full h-full min-h-[6rem] rounded-xl items-center justify-center ">
+      <div className="flex flex-row flex-wrap justify-center items-center gap-2">
+        {techs.map((tech) => (
+          <div
+            key={tech.name}
+            className="flex flex-col items-center justify-center border size-24 rounded-md bg-gray-400 text-black hover:bg-black hover:text-[#a991f7] transition-all duration-300"
+          >
+            <tech.icon className=" text-2xl mb-2" />
+            <span className=" text-md">
+              <b>{tech.name}</b>
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default TechnologiesSkeleton;
