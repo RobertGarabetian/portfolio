@@ -21,6 +21,7 @@ export default function Home() {
         </h3>
       </div>
       <Projects />
+      <div className="h-40 bg-gray-300" />
     </div>
   );
 }
