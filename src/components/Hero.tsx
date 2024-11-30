@@ -1,21 +1,17 @@
 "use client";
-
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { HiOutlineChevronDoubleDown } from "react-icons/hi";
 
 const Hero = () => {
-  const [bigPadding, setBigPadding] = useState("p-20");
+  const [padding, setPadding] = useState("px-20 py-40");
   const [rounded, setRounding] = useState("rounded-2xl");
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const width = window.innerWidth;
-      setBigPadding(width >= 1024 ? "p-96" : "p-20");
-    }
+    // document.body.style.overflow = "hidden"; // Disable scrolling
 
     const timer = setTimeout(() => {
-      setBigPadding("p-0");
+      setPadding("p-0");
       setRounding("rounded-none");
     }, 500);
 
@@ -38,26 +34,26 @@ const Hero = () => {
       className="w-full h-screen"
     >
       <div
-        className={`bg-gradient-to-br from-orange-200 to-yellow-300 w-full h-full transition-all ease-in-out duration-1000 ${bigPadding}`}
+        className={`bg-gradient-to-br from-orange-200 to-yellow-300 w-full h-full transition-all ease-in-out duration-1000 ${padding}`}
       >
         <div
           className={`w-full h-full text-gray-700 flex flex-col justify-center items-center bg-white transition-all ease-in-out duration-1000 ${rounded}`}
         >
-          <h1 className="text-2xl md:text-4xl font-bold">
-            Hi! I&apos;m{" "}
+          <h1 className=" text-2xl md:text-4xl font-bold">
+            Hi! I&apos;m <span className="block md:hidden"></span>
             <span className={"text-orange-300 font-extrabold"}>
               Robert Garabetian
             </span>
           </h1>
           <motion.div
-            className={`flex absolute bottom-0 justify-center pb-4 w-1/3 duration-1000 transition-all ease-in-out`}
+            className={`flex absolute bottom-0 justify-center pb-8 w-1/3 duration-1000 transition-all ease-in-out`}
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
             <HiOutlineChevronDoubleDown
               size={32}
-              className="animate-bounce text-white"
+              className="animate-bounce text-neutral-800"
             />
           </motion.div>
         </div>
