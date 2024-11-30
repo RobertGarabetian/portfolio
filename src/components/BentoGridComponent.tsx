@@ -1,18 +1,12 @@
 import React, { useState } from "react";
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import { useInView } from "react-intersection-observer";
-import {
-  IconArrowWaveRightUp,
-  IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
-} from "@tabler/icons-react";
 import TechnologiesSkeleton from "./ui/TechnologiesSkeleton";
 import SocialSkeleton from "./ui/SocialSkeleton";
 import GeneralInfoSkeleton from "./ui/GeneralInfoSkeleton";
 import ExperienceSkeleton from "./ui/ExperienceSkeleton";
 import SeekingSkeleton from "@/components/ui/SeekingSkeleton";
+import { FaCalendarAlt } from "react-icons/fa";
 
 export function BentoGridComponent() {
   const [triggerAnimation, setTriggerAnimation] = useState(false);
@@ -74,31 +68,31 @@ const items = [
     title: "About Me",
     description: "Explore the birth of groundbreaking ideas and inventions.",
     header: <GeneralInfoSkeleton />,
-    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
+    icon: <FaCalendarAlt className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Technologies",
     description: "Dive into the transformative power of technology.",
     header: <TechnologiesSkeleton />,
-    icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
+    icon: <FaCalendarAlt className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Social",
     description: "Discover the beauty of thoughtful and functional design.",
     header: <SocialSkeleton />,
-    icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
+    icon: <FaCalendarAlt className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Experience",
     description:
       "Understand the impact of effective communication in our lives.",
     header: <ExperienceSkeleton />,
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+    icon: <FaCalendarAlt className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Seeking",
     description: "Join the quest for understanding and enlightenment.",
     header: <SeekingSkeleton />,
-    icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
+    icon: <FaCalendarAlt className="h-4 w-4 text-neutral-500" />,
   },
 ];
