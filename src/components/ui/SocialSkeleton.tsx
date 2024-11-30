@@ -37,12 +37,12 @@ const socials = [
 
 const SocialSkeleton: React.FC = () => {
   return (
-    <div className="flex flex-col w-full h-full min-h-[6rem] rounded-xl items-center justify-center text-white space-y-4">
+    <div className="flex flex-col w-full h-full min-h-[6rem] rounded-xl items-center justify-center text-neutral-700 space-y-4">
       <div className="flex flex-row space-x-2">
         {socials.map((social) => (
           <a
             target="_blank"
-            className="text-3xl hover:text-[#a991f7]"
+            className="text-3xl hover:text-orange-500 hover:-translate-y-1 transition-all "
             data-tip={social.tooltip}
             href={social.link}
             key={social.id}
@@ -51,7 +51,7 @@ const SocialSkeleton: React.FC = () => {
           </a>
         ))}
       </div>
-      <div className="text-[#a991f7] text-lg">
+      <div className="text-orange-500 text-lg">
         <a href="mailto:robertgarabetian90@gmail.com">
           <b>robertgarabetian90@gmail.com</b>
         </a>

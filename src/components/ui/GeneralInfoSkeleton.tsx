@@ -14,18 +14,18 @@ const info = [
 ];
 const GeneralInfoSkeleton = () => {
   return (
-    <div className="flex flex-col w-full h-full min-h-[6rem] rounded-xl items-center justify-center text-white space-y-4">
-      <ul className="flex flex-col text-white text-xl p-2 space-y-4 w-full">
+    <div className="flex flex-col w-full h-full min-h-[6rem] rounded-xl items-center justify-center text-neutral-500 space-y-4">
+      <ul className="flex flex-col text-neutral-700 text-xl p-2 space-y-4 w-full">
         {info.map((item, index) => (
           <li
             key={index}
-            className="flex items-center gap-3 bg-white/10 rounded-lg p-3 transition-all duration-300 hover:bg-white/20"
+            className="flex items-center gap-3 bg-gray-400/10 rounded-lg p-3 transition-all duration-300 hover:bg-white/20 text-orange-500/80 hover:text-orange-500 "
           >
             <item.icon
-              className="flex-shrink-0 text-2xl text-[#a991f7]"
+              className="flex-shrink-0 text-2xl "
               aria-hidden="true"
             />
-            <span>{item.text}</span>
+            <span className={"text-neutral-700"}>{item.text}</span>
           </li>
         ))}
       </ul>

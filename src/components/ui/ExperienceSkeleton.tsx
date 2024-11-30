@@ -47,17 +47,17 @@ const ExperienceSkeleton = () => {
         <ul className="space-y-8">
           {experiences.map((exp) => (
             <li key={exp.name} className="relative pl-8">
-              <div className="absolute left-0 top-0 w-px h-full bg-[#a991f7]" />
+              <div className="absolute left-0 top-0 w-px h-full bg-orange-500" />
               <div className="bg-transparent rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-                <h3 className="font-semibold text-lg text-[#a991f7]">
+                <h3 className="font-semibold text-base lg:text-lg text-orange-500">
                   {exp.name}
                 </h3>
                 <p className="text-muted-foreground">
                   <b>{exp.details.role}</b>
                 </p>
-                <div className="flex items-center mt-2 text-sm text-muted-foreground">
+                <div className="flex items-center mt-2 text-xs md:text-sm text-muted-foreground">
                   <FaCalendarAlt className="w-4 h-4 mr-1" />
-                  <span>{exp.details.duration}</span>
+                  <span> {exp.details.duration} </span>
                 </div>
               </div>
             </li>

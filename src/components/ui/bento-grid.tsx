@@ -13,7 +13,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 mx-auto transition-all duration-1000 max-w-7xl",
+        "grid lg:auto-rows-[18rem] grid-cols-1 lg:grid-cols-3 gap-4 mx-auto transition-all duration-1000 max-w-7xl",
         className
       )}
     >
@@ -51,7 +51,7 @@ export const BentoGridItem = forwardRef<
       <motion.div
         ref={ref} // Forward the ref here
         className={cn(
-          "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] border border-white justify-between flex flex-col space-y-4",
+          "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] border border-gray-400 justify-between flex flex-col space-y-4",
           className
         )}
         variants={fadeInVariants}
@@ -62,11 +62,11 @@ export const BentoGridItem = forwardRef<
         {header}
         <div className="group-hover/bento:translate-x-2 transition duration-200 ">
           <span className="hidden">{icon}</span>
-          <div className="font-sans font-bold text-lg text-neutral-200 dark:text-neutral-200 mb-2 mt-2 ">
+          <div className="font-sans font-bold text-lg text-neutral-500 dark:text-neutral-200 mb-2 mt-2 ">
             <span className="relative px-3 py-1">
               {title}
               <span
-                className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent  to-white"
+                className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent  to-neutral-500"
                 style={{ content: '""' }}
               ></span>
             </span>
