@@ -52,7 +52,7 @@ const ExperienceSkeleton = () => {
                 <h3 className="font-semibold text-base lg:text-lg text-orange-500">
                   {exp.name}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-md">
                   <b>{exp.details.role}</b>
                 </p>
                 <div className="flex items-center mt-2 text-xs md:text-sm text-muted-foreground">

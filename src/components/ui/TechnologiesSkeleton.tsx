@@ -33,7 +33,7 @@ const TechnologiesSkeleton = () => {
         {techs.map((tech) => (
           <div
             key={tech.name}
-            className="flex flex-col items-center justify-center border size-[100px] rounded-md bg-gray-400/10  hover:bg-white/20  transition-all duration-300 p-1 text-orange-500/80 hover:text-orange-500 "
+            className="flex flex-col items-center justify-center  size-[100px] rounded-md bg-gray-400/10  hover:bg-white/20  transition-all duration-300 p-1 text-orange-500/80 hover:text-orange-500 "
           >
             <tech.icon className="  text-2xl mb-2" />
             <span className="text-neutral-700 text-md ">
