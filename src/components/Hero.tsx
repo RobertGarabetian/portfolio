@@ -4,7 +4,8 @@ import React, {useEffect, useState} from "react";
 import {HiOutlineChevronDoubleDown} from "react-icons/hi";
 
 const Hero = () => {
-    const [bigPadding, setBigPadding] = useState(window.innerWidth>=1024? "p-96" : "p-20");
+    const width = window.innerWidth;
+    const [bigPadding, setBigPadding] = useState(width>=1024? "p-96" : "p-20");
     const [rounded, setRounding] = useState("rounded-2xl");
 
     useEffect(() => {
