@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import { useInView } from "react-intersection-observer";
 import TechnologiesSkeleton from "./ui/TechnologiesSkeleton";
