@@ -1,14 +1,15 @@
 import React from "react";
 import { FaCode, FaGraduationCap } from "react-icons/fa";
 import { FaComputer } from "react-icons/fa6";
-import { PiFilmStripLight } from "react-icons/pi";
+import {PiFilmSlate, PiFilmStripLight} from "react-icons/pi";
 import { TbAugmentedReality } from "react-icons/tb";
 import { RiTeamFill } from "react-icons/ri";
 const info = [
   { icon: FaGraduationCap, text: "Computer Science Student" },
   { icon: FaComputer, text: "Full Stack Software Developer" },
   { icon: PiFilmStripLight, text: "Los Angeles, California" },
-  { icon: TbAugmentedReality, text: "Learning more about AR/VR" },
+  { icon: PiFilmSlate, text: "Film/TV nerd" },
+  { icon: TbAugmentedReality, text: "Learning more about Data Science" },
   { icon: FaCode, text: "Specialization in UI/UX" },
   { icon: RiTeamFill, text: "Fluent in English and Armenian" },
 ];
