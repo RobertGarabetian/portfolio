@@ -8,8 +8,14 @@ const info = [
   { icon: FaGraduationCap, text: "Computer Science Student" },
   { icon: FaComputer, text: "Full Stack Software Developer" },
   { icon: PiFilmStripLight, text: "Los Angeles, California" },
+<<<<<<< HEAD
   { icon: PiFilmSlate, text: "Film/TV Nerd" },
   { icon: TbAugmentedReality, text: "Learning more about Data Science" },
+=======
+  { icon: PiFilmSlate, text: "Film/TV nerd" },
+  { icon: TbAugmentedReality, text: "Learning more about Data Science" },
+  { icon: FaCode, text: "Specialization in UI/UX" },
+>>>>>>> refs/remotes/origin/main
   { icon: RiTeamFill, text: "Fluent in English and Armenian" },
 ];
 const GeneralInfoSkeleton = () => {
