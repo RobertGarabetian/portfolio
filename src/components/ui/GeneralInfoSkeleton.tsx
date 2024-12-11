@@ -1,21 +1,15 @@
 import React from "react";
 import { FaGraduationCap } from "react-icons/fa";
 import { FaComputer } from "react-icons/fa6";
-import {PiFilmSlate, PiFilmStripLight} from "react-icons/pi";
+import { PiFilmSlate, PiFilmStripLight } from "react-icons/pi";
 import { TbAugmentedReality } from "react-icons/tb";
 import { RiTeamFill } from "react-icons/ri";
 const info = [
   { icon: FaGraduationCap, text: "Computer Science Student" },
   { icon: FaComputer, text: "Full Stack Software Developer" },
   { icon: PiFilmStripLight, text: "Los Angeles, California" },
-<<<<<<< HEAD
   { icon: PiFilmSlate, text: "Film/TV Nerd" },
   { icon: TbAugmentedReality, text: "Learning more about Data Science" },
-=======
-  { icon: PiFilmSlate, text: "Film/TV nerd" },
-  { icon: TbAugmentedReality, text: "Learning more about Data Science" },
-  { icon: FaCode, text: "Specialization in UI/UX" },
->>>>>>> refs/remotes/origin/main
   { icon: RiTeamFill, text: "Fluent in English and Armenian" },
 ];
 const GeneralInfoSkeleton = () => {
@@ -27,10 +21,7 @@ const GeneralInfoSkeleton = () => {
             key={index}
             className="flex items-center gap-3 bg-gray-400/10 rounded-lg p-3 transition-all duration-300 hover:bg-white/20 text-orange-500/80 hover:text-orange-500 "
           >
-            <item.icon
-              className="flex-shrink-0 text-2xl "
-              aria-hidden="true"
-            />
+            <item.icon className="flex-shrink-0 text-2xl " aria-hidden="true" />
             <span className={"text-neutral-700"}>{item.text}</span>
           </li>
         ))}
