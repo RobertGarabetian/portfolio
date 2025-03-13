@@ -11,6 +11,14 @@ const nextConfig: NextConfig = {
         search: '',
 
       },
+      {
+        protocol: 'https',
+        hostname: 'oo4uynqbfg.ufs.sh',
+        port: '',
+        pathname: '/f/**',
+        search: '',
+
+      },
     ],
   },
 };

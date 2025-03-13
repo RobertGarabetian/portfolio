@@ -37,20 +37,14 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "TruckDocs",
+    title: "MentorMap",
     description:
-      "Created DOT compliance software to streamline truck drivers' paperwork and compliance, using Next.js, Clerk, and Tailwind CSS for a simplified interface.",
-    image: "https://utfs.io/f/QmXsupwvhToEZnAdOMkfGXIz0jp8hOBY2s3RFdwCtgKQDyUf",
-    tags: [
-      "Next.js",
-      "React.js",
-      "PostegreSQL",
-      "Prisma",
-      "API",
-      "Tailwind CSS",
-    ],
-    githubUrl: "https://github.com/RobertGarabetian/truck-docs-app",
-    liveUrl: "https://truck-docs-app.vercel.app/",
+      "Social platform to connect community college students to mentors that can provide career and educational advice. ",
+    image:
+      "https://oo4uynqbfg.ufs.sh/f/QmXsupwvhToEvr6dQcVHBZkh0nLGJftSsVWMw8zygxlFA7Nu",
+    tags: ["Next.js", "React.js", "PostegreSQL", "Tailwind CSS"],
+    githubUrl: "https://github.com/RobertGarabetian/MentorMap",
+    liveUrl: "https://mentor-map-blond.vercel.app/",
   },
 ];
 
