@@ -2,6 +2,19 @@ import React from "react";
 import { FaCalendarAlt } from "react-icons/fa";
 const experiences = [
   {
+    name: "MGD Consulting",
+    details: {
+      location: "Glendale, California",
+      role: "Software Engineer",
+      duration: "April 2025 – Present, Part-time",
+      description: [
+        "Hosted online collaborative sessions to provide supplemental instruction for students in CSIS 151 Python Programming (28 students) and CSIS 135 Programming in C/C++ (30 students).",
+        "Worked alongside students to debug programming assignments, teach and utilize Git for version control, and improve overall understanding of class material.",
+        "Managed the lab portion of the CSIS 135 class by planning weekly activities where students could work in teams to solve programming problems relating to what they had learned in class that week.",
+      ],
+    },
+  },
+  {
     name: "Technix Academy",
     details: {
       location: "Montrose, California",
@@ -14,19 +27,19 @@ const experiences = [
       ],
     },
   },
-  {
-    name: "Glendale Community College",
-    details: {
-      location: "Glendale, California",
-      role: "Computer Science Supplemental Instructor",
-      duration: "July 2024 – Aug 2024, Part-time",
-      description: [
-        "Hosted online collaborative sessions to provide supplemental instruction for students in CSIS 151 Python Programming (28 students) and CSIS 135 Programming in C/C++ (30 students).",
-        "Worked alongside students to debug programming assignments, teach and utilize Git for version control, and improve overall understanding of class material.",
-        "Managed the lab portion of the CSIS 135 class by planning weekly activities where students could work in teams to solve programming problems relating to what they had learned in class that week.",
-      ],
-    },
-  },
+  // {
+  //   name: "Glendale Community College",
+  //   details: {
+  //     location: "Glendale, California",
+  //     role: "Computer Science Supplemental Instructor",
+  //     duration: "July 2024 – Aug 2024, Part-time",
+  //     description: [
+  //       "Hosted online collaborative sessions to provide supplemental instruction for students in CSIS 151 Python Programming (28 students) and CSIS 135 Programming in C/C++ (30 students).",
+  //       "Worked alongside students to debug programming assignments, teach and utilize Git for version control, and improve overall understanding of class material.",
+  //       "Managed the lab portion of the CSIS 135 class by planning weekly activities where students could work in teams to solve programming problems relating to what they had learned in class that week.",
+  //     ],
+  //   },
+  // },
   {
     name: "Starbucks Coffee Company",
     details: {
