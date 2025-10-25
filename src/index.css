@@ -1,120 +1,88 @@
 @import "tailwindcss";
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-:root {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-  line-height: 1.6;
-  font-weight: 400;
-  
-  color-scheme: light;
-  color: #1e293b;
-  background-color: #ffffff;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-* {
-  box-sizing: border-box;
-}
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-html {
-  scroll-behavior: smooth;
-}
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-body {
-  margin: 0;
-  padding: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-}
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-#root {
-  min-height: 100vh;
-}
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-/* Typography improvements */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 0;
-}
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
-}
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
-h2 {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-weight: 700;
-}
+    --radius: 0.5rem;
 
-p {
-  margin: 0;
-  line-height: 1.7;
-}
+    --sidebar-background: 0 0% 98%;
 
-/* Link styles */
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
+    --sidebar-foreground: 240 5.3% 26.1%;
 
-a:hover {
-  text-decoration: none;
-}
+    --sidebar-primary: 240 5.9% 10%;
 
-/* Button styles */
-button {
-  font-family: inherit;
-  font-size: inherit;
-  border: none;
-  background: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
+    --sidebar-primary-foreground: 0 0% 98%;
 
-button:focus,
-button:focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
+    --sidebar-accent: 240 4.8% 95.9%;
 
-/* Focus styles for accessibility */
-*:focus {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
+    --sidebar-accent-foreground: 240 5.9% 10%;
 
-/* Selection styles */
-::selection {
-  background-color: #3b82f6;
-  color: white;
-}
+    --sidebar-border: 220 13% 91%;
 
-::-moz-selection {
-  background-color: #3b82f6;
-  color: white;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
-}
 
-/* Print styles */
-@media print {
-  * {
-    background: transparent !important;
-    color: black !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
