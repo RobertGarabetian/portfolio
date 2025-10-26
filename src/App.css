@@ -1,42 +1,366 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+:root {
+  --green: #64ffda;
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --dark-slate: #495670;
+  --navy: #0a192f;
+  --light-navy: #112240;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--navy);
+  color: var(--slate);
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar-nav a {
+  color: var(--slate);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.sidebar-nav a:hover {
+  color: var(--green);
+}
+
+.sidebar-nav a.active {
+  color: var(--green);
+}
+
+.sidebar-nav a.active::before {
+  content: '▸';
+  position: absolute;
+  left: -20px;
+  color: var(--green);
+}
+
+.sidebar-social {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-social a {
+  color: var(--slate);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.3s ease;
+}
+
+.sidebar-social a:hover {
+  color: var(--green);
+}
+
+.main-content {
+  margin-left: 250px;
+  flex: 1;
+  max-width: 900px;
+  padding: 120px 60px 60px 60px;
+}
+
+.hero {
+  margin-bottom: 100px;
+  scroll-margin-top: 120px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.hero h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--light-slate);
+  margin-bottom: 24px;
+}
+
+.hero p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--slate);
+  max-width: 600px;
+}
+
+.section {
+  margin-bottom: 120px;
+  scroll-margin-top: 120px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 32px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 60%;
+  background-color: var(--green);
+}
+
+.section-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--slate);
+  margin-bottom: 16px;
+}
+
+.tech-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin-top: 24px;
+}
+
+.tech-list li {
+  font-size: 14px;
+  color: var(--slate);
+  position: relative;
+  padding-left: 20px;
+}
+
+.tech-list li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+}
+
+.experience-item {
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.experience-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.experience-header {
+  margin-bottom: 16px;
+}
+
+.experience-header h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.experience-header .company {
+  color: var(--green);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.experience-header .date {
+  color: var(--slate);
+  font-size: 14px;
+  margin-left: 12px;
+}
+
+.experience-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.experience-item ul li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--slate);
+  margin-bottom: 12px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.experience-item ul li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.tech-tags span {
+  font-size: 12px;
+  color: var(--green);
+  background-color: rgba(100, 255, 218, 0.1);
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.project-card {
+  background: var(--light-navy);
+  border-radius: 8px;
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--green);
+}
+
+.project-header h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.project-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--slate);
+  margin-bottom: 24px;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.project-tech span {
+  font-size: 13px;
+  color: var(--slate);
+}
+
+.project-links {
+  display: flex;
+  gap: 24px;
+}
+
+.project-links a {
+  color: var(--green);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+  color: #fff;
+}
+
+.footer {
+  margin-top: 120px;
   text-align: center;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.footer p {
+  font-size: 14px;
+  color: var(--slate);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 968px) {
+  .sidebar {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .main-content {
+    margin-left: 0;
+    padding: 80px 40px 40px 40px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .section-title {
+    font-size: 28px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 640px) {
+  .main-content {
+    padding: 60px 24px 24px 24px;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .hero h1 {
+    font-size: 32px;
+  }
 
-.read-the-docs {
-  color: #888;
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .tech-list {
+    grid-template-columns: 1fr;
+  }
 }

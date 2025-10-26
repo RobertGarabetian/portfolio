@@ -1,141 +1,231 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [activeTab, setActiveTab] = useState("experience");
+  const [activeSection, setActiveSection] = useState("about");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["about", "experience", "projects"];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (section: string) => {
+    const element = document.getElementById(section);
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - 100;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex items-center justify-center px-4 py-10">
-      <div className="relative w-full max-w-6xl flex flex-col md:flex-row bg-white border border-gray-200 shadow-lg rounded-2xl overflow-hidden">
+    <div className="app">
+      {/* Fixed Sidebar */}
+      <aside className="sidebar">
 
-        {/* Left: About */}
-        <div className="flex-1 flex flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-white p-8 md:p-12 border-r border-gray-100">
-          <div className="max-w-md w-full text-center md:text-left">
-            <h3 className="text-3xl font-bold mb-4 text-gray-900">Robert Garabetian</h3>
-            <p className="text-base text-gray-600 leading-relaxed">
-              Hi, I'm a third year Computer Science student at{" "}
-              <span className="font-semibold text-red-700">USC</span>. Recently, I've been exploring the Go programming language and learning more about concurrency and distributed systems.
-            </p>
-          </div>
+        <nav className="sidebar-nav">
+          <a
+            href="#about"
+            className={activeSection === "about" ? "active" : ""}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("about");
+            }}
+          >
+            About
+          </a>
+          <a
+            href="#experience"
+            className={activeSection === "experience" ? "active" : ""}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("experience");
+            }}
+          >
+            Experience
+          </a>
+          <a
+            href="#projects"
+            className={activeSection === "projects" ? "active" : ""}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("projects");
+            }}
+          >
+            Projects
+          </a>
+        </nav>
 
-          {/* Contact Buttons */}
-          <div className="flex flex-wrap justify-center md:justify-start gap-3 mt-8">
-            {[
-              { label: "GitHub", href: "https://github.com/RobertGarabetian" },
-              { label: "LinkedIn", href: "https://www.linkedin.com/in/robert-garabetian-968396294/" },
-              { label: "Email", href: "mailto:robertg1@usc.edu" },
-            ].map((btn) => (
-              <a
-                key={btn.label}
-                href={btn.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-lg bg-indigo-600 text-white text-sm font-medium shadow-sm"
-              >
-                {btn.label}
-              </a>
-            ))}
-          </div>
+        <div className="sidebar-social">
+          <a href="https://github.com/robertgarabetian" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com/robert-garabetian" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
+      </aside>
 
-        {/* Right: Tabs */}
-        <div className="flex-1 bg-white p-8 md:p-12 flex flex-col">
-          {/* Tabs */}
-          <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-6 border-b border-gray-200 pb-4">
-            {["experience", "technologies", "projects"].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${activeTab === tab
-                  ? "bg-indigo-600 text-white"
-                  : "bg-gray-100 text-gray-700"
-                  }`}
-              >
-                {tab.charAt(0).toUpperCase() + tab.slice(1)}
-              </button>
-            ))}
+      {/* Main Content */}
+      <main className="main-content">
+        <main id="about" className="hero">
+          <h1>Robert Garabetian</h1>
+          <h2>Software Engineer</h2>
+          <p>I'm a third year Computer Science student at the University of Southern California. I primarily work with C++ in school and Go and TypeScript in my free time and at work.</p>
+        </main>
+
+        {/* <section id="about" className="section">
+          <h2 className="section-title">About</h2>
+          <div className="section-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+            <p>
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+              Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+            </p>
+            <p>Here are a few technologies I've been working with recently:</p>
+            <ul className="tech-list">
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>React</li>
+              <li>Next.js</li>
+              <li>Node.js</li>
+              <li>HTML & CSS</li>
+            </ul>
           </div>
+        </section> */}
 
-          {/* Content with fixed height */}
-          <div className="flex-1 overflow-y-auto text-left">
-            <div className="bg-gray-50 rounded-xl p-6 min-h-[400px]">
-              {activeTab === "experience" && (
-                <div className="space-y-6 text-gray-700 text-sm">
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
-                      Software Engineer Intern
-                    </h3>
-                    <p className="text-gray-500 mb-2">MGD Consulting • Apr 2025 - Present</p>
-                    <ul className="space-y-1">
-                      <li>• Build REST APIs in Go for medical billing software</li>
-                      <li>• Create dashboards with Next.js & TypeScript</li>
-                      <li>• Develop data pipelines with Go & PostgreSQL</li>
-                      <li>• Deploy backend services to AWS via Docker</li>
-                      <li>• Automate file uploads with Python (70% faster)</li>
-                    </ul>
-                  </div>
+        <section id="experience" className="section">
+          <h2 className="section-title">Where I've Worked</h2>
+          <div className="section-content">
+            <div className="experience-item">
+              <div className="experience-header">
+                <h3>Software Engineer</h3>
+                <span className="company">@ MGD Consulting</span>
+                <span className="date">April 2025 — Present</span>
+              </div>
+              <ul>
+                <li>Designed REST APIs using <strong>Go</strong> to connect medical billing software with clearinghouses for claim submission and status tracking.</li>
+                <li>Utilized <strong>TypeScript</strong>, <strong>React</strong>, and <strong>Next.js</strong> to build interactive data visualization dashboards to model medical coder efficiency and identify workflow bottlenecks.</li>
+                <li>Built data validation pipelines using <strong>Go</strong> and <strong>PostgreSQL</strong> to normalize complex medical insurance claim data, improving organization and long-term storage.</li>
+                <li>Collaborated with senior developers to introduce backend service deployment infrastructure to <strong>AWS</strong> using <strong>Docker</strong>, reducing deployment errors by <strong>30%</strong>.</li>
+                <li>Automated file uploading for patient data using <strong>Python</strong> scripts, reducing manual upload time by <strong>70%</strong>.</li>
+              </ul>
+              <div className="tech-tags">
+                <span>Go</span>
+                <span>TypeScript</span>
+                <span>React</span>
+                <span>Next.js</span>
+                <span>PostgreSQL</span>
+                <span>AWS</span>
+                <span>Docker</span>
+                <span>Python</span>
+              </div>
+            </div>
 
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
-                      Coding Instructor
-                    </h3>
-                    <p className="text-gray-500 mb-2">Technix Academy • Oct 2023 - Sep 2024</p>
-                    <ul className="space-y-1">
-                      <li>• Taught 80+ students programming fundamentals</li>
-                      <li>• Instructed in Python, Java, and C++</li>
-                      <li>• Authored 200+ pages of DSA curriculum</li>
-                      <li>• Introduced design tools like Illustrator & Tinkercad</li>
-                    </ul>
-                  </div>
-                </div>
-              )}
-
-              {activeTab === "technologies" && (
-                <div className="space-y-4 text-sm text-gray-700">
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Programming Languages</h3>
-                    <p>Go, TypeScript, Python, C++, Java, SQL, Rust, HTML, CSS</p>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Frameworks & Tools</h3>
-                    <p>React, Next.js, Node.js, PostgreSQL, GraphQL, AWS, Docker, Caddy</p>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Dev Tools</h3>
-                    <p>Git, GitHub, Vercel, DigitalOcean</p>
-                  </div>
-                </div>
-              )}
-
-              {activeTab === "projects" && (
-                <div className="space-y-6 text-sm text-gray-700">
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Video Transcoder</h3>
-                    <p className="text-gray-500 mb-2">Personal Project</p>
-                    <ul className="space-y-1">
-                      <li>• Scalable Go-based transcoding pipeline with FFmpeg + AWS SDK</li>
-                      <li>• REST API for upload orchestration</li>
-                      <li>• Deployed via DigitalOcean + Caddy</li>
-                      <li>• Built frontend with Next.js + Tailwind</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h3 className="font-semibold text-gray-900">MentorMap</h3>
-                    <p className="text-gray-500 mb-2">Community Platform</p>
-                    <ul className="space-y-1">
-                      <li>• Reddit-style mentorship platform</li>
-                      <li>• Next.js + TypeScript frontend</li>
-                      <li>• Supabase + PostgreSQL backend</li>
-                      <li>• Deployed on Vercel</li>
-                    </ul>
-                  </div>
-                </div>
-              )}
+            <div className="experience-item">
+              <div className="experience-header">
+                <h3>Coding Instructor</h3>
+                <span className="company">@ Technix Academy</span>
+                <span className="date">October 2023 — September 2024</span>
+              </div>
+              <ul>
+                <li>Taught over <strong>80 children</strong> (ages 6-18) beginner through college-level computer science concepts and <strong>OOP</strong> in languages like <strong>Python</strong>, <strong>Java</strong>, and <strong>C++</strong>, fostering problem-solving and logical thinking.</li>
+                <li>Instructed students on graphic design software such as <strong>Adobe Illustrator</strong>, <strong>Tinkercad</strong>, and <strong>Paint 3D</strong> to build a foundation in digital tools for creativity.</li>
+                <li>Collaborated with supervisors to develop and revise over <strong>200 pages</strong> of <strong>C++</strong> and <strong>Python</strong> curriculum for teaching <strong>Data Structures and Algorithms</strong>.</li>
+              </ul>
+              <div className="tech-tags">
+                <span>Python</span>
+                <span>Java</span>
+                <span>C++</span>
+                <span>Data Structures</span>
+                <span>Algorithms</span>
+                <span>Adobe Illustrator</span>
+                <span>Tinkercad</span>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+
+        <section id="projects" className="section">
+          <h2 className="section-title">Some Things I've Built</h2>
+          <div className="projects-grid">
+            <div className="project-card">
+              <div className="project-header">
+                <h3>One Klick Website</h3>
+              </div>
+              <p>Preview site for One Klick, a thriller short-film from Rage Productions.</p>
+              <div className="project-tech">
+                <span>Next.js</span>
+                <span>TypeScript</span>
+                <span>Tailwind CSS</span>
+              </div>
+              <div className="project-links">
+                <a href="https://github.com/robertgarabetian/oneklickmovie" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://oneklickmovie.vercel.app" target="_blank" rel="noopener noreferrer">Live Demo</a>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <div className="project-header">
+                <h3>Video Transcoder</h3>
+              </div>
+              <p>Video transcoder built with Go uitlizing FFmpeg. Videos are transcoded into HLS format for adaptive bitrate streaming. The videos are stored in an AWS S3 bucket. Frontend built with Next.js and HLS.js.</p>
+              <div className="project-tech">
+                <span>Go</span>
+                <span>FFmpeg</span>
+                <span>AWS S3</span>
+                <span>Next.js</span>
+                <span>TypeScript</span>
+                <span>HLS.js</span>
+              </div>
+              <div className="project-links">
+                <a href="https://github.com/robertgarabetian/transcoder" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://transcoder.client.robertgarabetian.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <div className="project-header">
+                <h3>Mentor Map</h3>
+              </div>
+              <p>A Reddit-inspired social platform to connect community college students to succesful transfers.</p>
+              <div className="project-tech">
+                <span>Next.js</span>
+                <span>Supabase</span>
+                <span>PostgreSQL</span>
+              </div>
+              <div className="project-links">
+                <a href="https://github.com/robertgarabetian/MentorMap" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://mentor-map-blond.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer className="footer">
+          <p>Designed & built with React & Vercel</p>
+        </footer>
+      </main>
     </div>
   );
 }
