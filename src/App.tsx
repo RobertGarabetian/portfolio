@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [activeSection, setActiveSection] = useState("about");
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +36,17 @@ function App() {
         top: offsetPosition,
         behavior: "smooth"
       });
+    }
+  };
+
+  const copyEmail = async () => {
+    const email = "robertg1@usc.edu";
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy email:", err);
     }
   };
 
@@ -79,6 +91,9 @@ function App() {
         <div className="sidebar-social">
           <a href="https://github.com/robertgarabetian" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://linkedin.com/robert-garabetian" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <button onClick={copyEmail} className="sidebar-email-button">
+            {copied ? "Copied! robertg1@usc.edu" : "Email"}
+          </button>
         </div>
       </aside>
 
