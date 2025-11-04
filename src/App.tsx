@@ -14,7 +14,10 @@ function App() {
         const element = document.getElementById(section);
         if (element) {
           const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
             setActiveSection(section);
             break;
           }
@@ -34,7 +37,7 @@ function App() {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   };
@@ -54,7 +57,6 @@ function App() {
     <div className="app">
       {/* Fixed Sidebar */}
       <aside className="sidebar">
-
         <nav className="sidebar-nav">
           <a
             href="#about"
@@ -89,8 +91,20 @@ function App() {
         </nav>
 
         <div className="sidebar-social">
-          <a href="https://github.com/robertgarabetian" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://linkedin.com/robert-garabetian" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a
+            href="https://github.com/robertgarabetian"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com/in/robert-garabetian"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
           <button onClick={copyEmail} className="sidebar-email-button">
             {copied ? "Copied! robertg1@usc.edu" : "Email"}
           </button>
@@ -102,7 +116,11 @@ function App() {
         <main id="about" className="hero">
           <h1>Robert Garabetian</h1>
           <h2>Software Engineer</h2>
-          <p>I'm a third year Computer Science student at the University of Southern California. I primarily work with C++ in school and Go and TypeScript in my free time and at work.</p>
+          <p>
+            I'm a third year Computer Science student at the University of
+            Southern California. I primarily work with C++ in school and Go and
+            TypeScript in my free time and at work.
+          </p>
         </main>
 
         {/* <section id="about" className="section">
@@ -139,11 +157,34 @@ function App() {
                 <span className="date">April 2025 — Present</span>
               </div>
               <ul>
-                <li>Designed REST APIs using <strong>Go</strong> to connect medical billing software with clearinghouses for claim submission and status tracking.</li>
-                <li>Utilized <strong>TypeScript</strong>, <strong>React</strong>, and <strong>Next.js</strong> to build interactive data visualization dashboards to model medical coder efficiency and identify workflow bottlenecks.</li>
-                <li>Built data validation pipelines using <strong>Go</strong> and <strong>PostgreSQL</strong> to normalize complex medical insurance claim data, improving organization and long-term storage.</li>
-                <li>Collaborated with senior developers to introduce backend service deployment infrastructure to <strong>AWS</strong> using <strong>Docker</strong>, reducing deployment errors by <strong>30%</strong>.</li>
-                <li>Automated file uploading for patient data using <strong>Python</strong> scripts, reducing manual upload time by <strong>70%</strong>.</li>
+                <li>
+                  Designed REST APIs using <strong>Go</strong> to connect
+                  medical billing software with clearinghouses for claim
+                  submission and status tracking.
+                </li>
+                <li>
+                  Utilized <strong>TypeScript</strong>, <strong>React</strong>,
+                  and <strong>Next.js</strong> to build interactive data
+                  visualization dashboards to model medical coder efficiency and
+                  identify workflow bottlenecks.
+                </li>
+                <li>
+                  Built data validation pipelines using <strong>Go</strong> and{" "}
+                  <strong>PostgreSQL</strong> to normalize complex medical
+                  insurance claim data, improving organization and long-term
+                  storage.
+                </li>
+                <li>
+                  Collaborated with senior developers to introduce backend
+                  service deployment infrastructure to <strong>AWS</strong>{" "}
+                  using <strong>Docker</strong>, reducing deployment errors by{" "}
+                  <strong>30%</strong>.
+                </li>
+                <li>
+                  Automated file uploading for patient data using{" "}
+                  <strong>Python</strong> scripts, reducing manual upload time
+                  by <strong>70%</strong>.
+                </li>
               </ul>
               <div className="tech-tags">
                 <span>Go</span>
@@ -164,9 +205,25 @@ function App() {
                 <span className="date">October 2023 — September 2024</span>
               </div>
               <ul>
-                <li>Taught over <strong>80 children</strong> (ages 6-18) beginner through college-level computer science concepts and <strong>OOP</strong> in languages like <strong>Python</strong>, <strong>Java</strong>, and <strong>C++</strong>, fostering problem-solving and logical thinking.</li>
-                <li>Instructed students on graphic design software such as <strong>Adobe Illustrator</strong>, <strong>Tinkercad</strong>, and <strong>Paint 3D</strong> to build a foundation in digital tools for creativity.</li>
-                <li>Collaborated with supervisors to develop and revise over <strong>200 pages</strong> of <strong>C++</strong> and <strong>Python</strong> curriculum for teaching <strong>Data Structures and Algorithms</strong>.</li>
+                <li>
+                  Taught over <strong>80 children</strong> (ages 6-18) beginner
+                  through college-level computer science concepts and{" "}
+                  <strong>OOP</strong> in languages like <strong>Python</strong>
+                  , <strong>Java</strong>, and <strong>C++</strong>, fostering
+                  problem-solving and logical thinking.
+                </li>
+                <li>
+                  Instructed students on graphic design software such as{" "}
+                  <strong>Adobe Illustrator</strong>, <strong>Tinkercad</strong>
+                  , and <strong>Paint 3D</strong> to build a foundation in
+                  digital tools for creativity.
+                </li>
+                <li>
+                  Collaborated with supervisors to develop and revise over{" "}
+                  <strong>200 pages</strong> of <strong>C++</strong> and{" "}
+                  <strong>Python</strong> curriculum for teaching{" "}
+                  <strong>Data Structures and Algorithms</strong>.
+                </li>
               </ul>
               <div className="tech-tags">
                 <span>Python</span>
@@ -188,15 +245,30 @@ function App() {
               <div className="project-header">
                 <h3>One Klick Website</h3>
               </div>
-              <p>Preview site for One Klick, a thriller short-film from Rage Productions.</p>
+              <p>
+                Preview site for One Klick, a thriller short-film from Rage
+                Productions.
+              </p>
               <div className="project-tech">
                 <span>Next.js</span>
                 <span>TypeScript</span>
                 <span>Tailwind CSS</span>
               </div>
               <div className="project-links">
-                <a href="https://github.com/robertgarabetian/oneklickmovie" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://oneklickmovie.vercel.app" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a
+                  href="https://github.com/robertgarabetian/oneklickmovie"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://oneklickmovie.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </a>
               </div>
             </div>
 
@@ -204,7 +276,12 @@ function App() {
               <div className="project-header">
                 <h3>Video Transcoder</h3>
               </div>
-              <p>Video transcoder built with Go uitlizing FFmpeg. Videos are transcoded into HLS format for adaptive bitrate streaming. The videos are stored in an AWS S3 bucket. Frontend built with Next.js and HLS.js.</p>
+              <p>
+                Video transcoder built with Go uitlizing FFmpeg. Videos are
+                transcoded into HLS format for adaptive bitrate streaming. The
+                videos are stored in an AWS S3 bucket. Frontend built with
+                Next.js and HLS.js.
+              </p>
               <div className="project-tech">
                 <span>Go</span>
                 <span>FFmpeg</span>
@@ -214,8 +291,20 @@ function App() {
                 <span>HLS.js</span>
               </div>
               <div className="project-links">
-                <a href="https://github.com/robertgarabetian/transcoder" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://transcoder.client.robertgarabetian.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a
+                  href="https://github.com/robertgarabetian/transcoder"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://transcoder.client.robertgarabetian.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </a>
               </div>
             </div>
 
@@ -223,15 +312,30 @@ function App() {
               <div className="project-header">
                 <h3>Mentor Map</h3>
               </div>
-              <p>A Reddit-inspired social platform to connect community college students to succesful transfers.</p>
+              <p>
+                A Reddit-inspired social platform to connect community college
+                students to succesful transfers.
+              </p>
               <div className="project-tech">
                 <span>Next.js</span>
                 <span>Supabase</span>
                 <span>PostgreSQL</span>
               </div>
               <div className="project-links">
-                <a href="https://github.com/robertgarabetian/MentorMap" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://mentor-map-blond.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a
+                  href="https://github.com/robertgarabetian/MentorMap"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://mentor-map-blond.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </a>
               </div>
             </div>
           </div>
