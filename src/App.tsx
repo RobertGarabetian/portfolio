@@ -117,9 +117,14 @@ function App() {
           <h1>Robert Garabetian</h1>
           <h2>Software Engineer</h2>
           <p>
-            I'm a third year Computer Science student at the University of
-            Southern California. I primarily work with C++ in school and Go and
-            TypeScript in my free time and at work.
+            I'm currently a junior at USC studying Computer Science. Lately,
+            I've been interested in C++, Rust, and Go. This semester, I'll be
+            working as Director of Curriculum for Scope, teaching Docker to 40+
+            students. <br />
+            <br />
+            In the past, I've worked as a Software Engineering Intern for MGD
+            Consulting where I contributed across the stack using Go, Python,
+            TypeScript, and Docker.
           </p>
         </main>
 
@@ -154,36 +159,42 @@ function App() {
               <div className="experience-header">
                 <h3>Software Engineer</h3>
                 <span className="company">@ MGD Consulting</span>
-                <span className="date">April 2025 — Present</span>
+                <span className="date">April 2025 — December 2025</span>
               </div>
               <ul>
                 <li>
-                  Designed REST APIs using <strong>Go</strong> to connect
-                  medical billing software with clearinghouses for claim
-                  submission and status tracking.
+                  Designed and implemented a core end‑to‑end medical claims
+                  submission and tracking pipeline by building{" "}
+                  <strong>REST APIs</strong> in <strong>Go</strong> that
+                  securely connected internal billing systems with external
+                  insurance clearinghouses, enabling reliable claim submission
+                  and real‑time status updates.
                 </li>
                 <li>
-                  Utilized <strong>TypeScript</strong>, <strong>React</strong>,
-                  and <strong>Next.js</strong> to build interactive data
-                  visualization dashboards to model medical coder efficiency and
-                  identify workflow bottlenecks.
+                  Developed and enhanced client‑facing dashboards using{" "}
+                  <strong>TypeScript</strong> and <strong>React</strong> that
+                  surfaced claim lifecycle state, medical coding progress, and
+                  payer feedback in a clear, actionable format, supporting daily
+                  operations for <strong>250+ home health agencies</strong>{" "}
+                  managing <strong>thousands of active patient claims</strong>.
                 </li>
                 <li>
-                  Built data validation pipelines using <strong>Go</strong> and{" "}
-                  <strong>PostgreSQL</strong> to normalize complex medical
-                  insurance claim data, improving organization and long-term
-                  storage.
+                  Built robust{" "}
+                  <strong>data validation and normalization pipelines</strong>{" "}
+                  in <strong>Python</strong> and <strong>PostgreSQL</strong> to
+                  standardize highly variable insurance and clinical data prior
+                  to submission, significantly improving data integrity and
+                  reducing downstream insurance claim denials by{" "}
+                  <strong>10%</strong>.
                 </li>
                 <li>
                   Collaborated with senior developers to introduce backend
                   service deployment infrastructure to <strong>AWS</strong>{" "}
-                  using <strong>Docker</strong>, reducing deployment errors by{" "}
-                  <strong>30%</strong>.
-                </li>
-                <li>
-                  Automated file uploading for patient data using{" "}
-                  <strong>Python</strong> scripts, reducing manual upload time
-                  by <strong>70%</strong>.
+                  using <strong>Docker</strong> and <strong>Terraform</strong>,
+                  improving organization and reducing deployment errors by{" "}
+                  <strong>30%</strong>, and automated patient data file uploads
+                  using <strong>Python scripts</strong> to reduce manual upload
+                  time by <strong>70%</strong>.
                 </li>
               </ul>
               <div className="tech-tags">
@@ -243,37 +254,6 @@ function App() {
           <div className="projects-grid">
             <div className="project-card">
               <div className="project-header">
-                <h3>One Klick Website</h3>
-              </div>
-              <p>
-                Preview site for One Klick, a thriller short-film from Rage
-                Productions.
-              </p>
-              <div className="project-tech">
-                <span>Next.js</span>
-                <span>TypeScript</span>
-                <span>Tailwind CSS</span>
-              </div>
-              <div className="project-links">
-                <a
-                  href="https://github.com/robertgarabetian/oneklickmovie"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
-                <a
-                  href="https://oneklickmovie.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Live Demo
-                </a>
-              </div>
-            </div>
-
-            <div className="project-card">
-              <div className="project-header">
                 <h3>Video Transcoder</h3>
               </div>
               <p>
@@ -304,6 +284,25 @@ function App() {
                   rel="noopener noreferrer"
                 >
                   Live Demo
+                </a>
+              </div>
+            </div>
+            <div className="project-card">
+              <div className="project-header">
+                <h3>2D Game (Scope F25 Project)</h3>
+              </div>
+              <p>Simple 2D game built using Go and Ebitengine.</p>
+              <div className="project-tech">
+                <span>Go</span>
+                <span>Ebitengine</span>
+              </div>
+              <div className="project-links">
+                <a
+                  href="https://github.com/robertgarabetian/scope_f25_project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
                 </a>
               </div>
             </div>
@@ -338,12 +337,38 @@ function App() {
                 </a>
               </div>
             </div>
+            <div className="project-card">
+              <div className="project-header">
+                <h3>One Klick Website</h3>
+              </div>
+              <p>
+                Preview site for One Klick, a thriller short-film from Rage
+                Productions.
+              </p>
+              <div className="project-tech">
+                <span>Next.js</span>
+                <span>TypeScript</span>
+                <span>Tailwind CSS</span>
+              </div>
+              <div className="project-links">
+                <a
+                  href="https://github.com/robertgarabetian/oneklickmovie"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://oneklickmovie.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </a>
+              </div>
+            </div>
           </div>
         </section>
-
-        <footer className="footer">
-          <p>Designed & built with React & Vercel</p>
-        </footer>
       </main>
     </div>
   );
