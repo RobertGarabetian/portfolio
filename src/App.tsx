@@ -165,23 +165,23 @@ function App() {
                 <li>
                   Designed and implemented a core end‑to‑end medical claims
                   submission and tracking pipeline by building{" "}
-                  <strong>REST APIs</strong> in <strong>Go</strong> that
-                  securely connected internal billing systems with external
-                  insurance clearinghouses, enabling reliable claim submission
-                  and real‑time status updates.
+                  <strong>REST APIs</strong> that securely connected internal
+                  billing systems with external insurance clearinghouses,
+                  enabling reliable claim submission and real‑time status
+                  updates.
                 </li>
                 <li>
                   Developed and enhanced client‑facing dashboards using{" "}
-                  <strong>TypeScript</strong> and <strong>React</strong> that
-                  surfaced claim lifecycle state, medical coding progress, and
-                  payer feedback in a clear, actionable format, supporting daily
-                  operations for <strong>250+ home health agencies</strong>{" "}
-                  managing <strong>thousands of active patient claims</strong>.
+                  <strong>TypeScript</strong>, <strong>React</strong>, and{" "}
+                  <strong>Next.js</strong> that surfaced claim lifecycle state,
+                  medical coding progress, and payer feedback in a clear,
+                  actionable format, supporting daily operations for{" "}
+                  <strong>250+ home health agencies</strong> managing{" "}
+                  <strong>thousands of active patient claims</strong>.
                 </li>
                 <li>
                   Built robust{" "}
-                  <strong>data validation and normalization pipelines</strong>{" "}
-                  in <strong>Python</strong> and <strong>PostgreSQL</strong> to
+                  <strong>data validation and normalization pipelines</strong>to
                   standardize highly variable insurance and clinical data prior
                   to submission, significantly improving data integrity and
                   reducing downstream insurance claim denials by{" "}
@@ -199,6 +199,7 @@ function App() {
               </ul>
               <div className="tech-tags">
                 <span>Go</span>
+                <span>Rust</span>
                 <span>TypeScript</span>
                 <span>React</span>
                 <span>Next.js</span>
@@ -206,6 +207,7 @@ function App() {
                 <span>AWS</span>
                 <span>Docker</span>
                 <span>Python</span>
+                <span>Terraform</span>
               </div>
             </div>
 
