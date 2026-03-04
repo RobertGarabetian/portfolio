@@ -181,10 +181,10 @@ function App() {
                 </li>
                 <li>
                   Built robust{" "}
-                  <strong>data validation and normalization pipelines</strong>to
-                  standardize highly variable insurance and clinical data prior
-                  to submission, significantly improving data integrity and
-                  reducing downstream insurance claim denials by{" "}
+                  <strong>data validation and normalization pipelines</strong>{" "}
+                  to standardize highly variable insurance and clinical data
+                  prior to submission, significantly improving data integrity
+                  and reducing downstream insurance claim denials by{" "}
                   <strong>10%</strong>.
                 </li>
                 <li>
